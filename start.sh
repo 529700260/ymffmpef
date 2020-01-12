@@ -6,7 +6,7 @@ __run() {
 
 __start() {
 if [ ! -d "/ym/" ];then
-   mkdir  /ym/www
+   mkdir -p /ym/www
    cp /var/www/xz-5.2.4.tar.bz2 /ym/www
    cp /var/www/ffmpeg-release-amd64-static.tar.xz /ym/www
    cd /ym/www
