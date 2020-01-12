@@ -1,6 +1,8 @@
 FROM daocloud.io/library/java:8u40-b09
 MAINTAINER JiYun Tech Team <mboss0@163.com>
-
+RUN mkdir -p /var/ww
+VOLUME /var/ww
+WORKDIR /var/ww
 ADD ./sources.list /etc/apt/sources.list
 ADD ./ffmpeg-release-amd64-static.tar.xz /var/ww/ffmpeg-release-amd64-static.tar.xz
 ADD ./xz-5.2.4.tar.bz2 /var/ww/xz-5.2.4.tar.bz2
