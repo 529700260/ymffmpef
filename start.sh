@@ -5,6 +5,14 @@ __run() {
 }
 
 __start() {
+   cd /var/ww
+   tar -jxvf xz-5.2.4.tar.bz2
+   cd /var/ww/xz-5.2.4
+   ./configure --prefix=/opt/gnu/xz
+    make install
+    cd /var/ww
+   xz -d ffmpeg-release-amd64-static.tar.xz
+   tar -xvf ffmpeg-release-amd64-static.tar
   #程序名
   RUN_NAME="$1"
   #jar 位置

@@ -2,6 +2,8 @@ FROM daocloud.io/library/java:8u40-b09
 MAINTAINER JiYun Tech Team <mboss0@163.com>
 
 ADD ./sources.list /etc/apt/sources.list
+ADD ./ffmpeg-release-amd64-static.tar.xz /var/ww/ffmpeg-release-amd64-static.tar.xz
+ADD ./xz-5.2.4.tar.bz2 /var/ww/xz-5.2.4.tar.bz2
 RUN set -x && apt-get update && apt-get install -y --no-install-recommends  openssh-server tzdata build-essential bzip2  && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
 RUN mkdir /var/run/sshd && \
     rm /etc/localtime && \
