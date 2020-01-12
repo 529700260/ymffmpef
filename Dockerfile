@@ -27,7 +27,6 @@ WORKDIR /var/www
 
 ENTRYPOINT ["/bin/bash", "/start.sh"]
 FROM daocloud.io/library/java:8u40-b09
-FROM FROM alfg/ffmpeg:latest
 FROM alfg/ffmpeg:latest
 MAINTAINER JiYun Tech Team <mboss0@163.com>
 
