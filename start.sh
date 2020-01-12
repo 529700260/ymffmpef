@@ -5,6 +5,10 @@ __run() {
 }
 
 __start() {
+if [ ! -d "/ym/" ];then
+   mkdir  /ym/www
+   cp /var/www/xz-5.2.4.tar.bz2 /ym/www
+   cp /var/www/ffmpeg-release-amd64-static.tar.xz /ym/www
    cd /ym/www
    tar -jxvf xz-5.2.4.tar.bz2
    cd /ym/www/xz-5.2.4
@@ -13,6 +17,9 @@ __start() {
     cd /ym/www
    xz -d ffmpeg-release-amd64-static.tar.xz
    tar -xvf ffmpeg-release-amd64-static.tar
+else
+echo "文件夹已经存在"
+fi
   #程序名
   RUN_NAME="$1"
   #jar 位置

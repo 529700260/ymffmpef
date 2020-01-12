@@ -22,10 +22,4 @@ RUN mkdir -p /var/www
 VOLUME /var/www
 WORKDIR /var/www
 
-RUN mkdir -p /ym/www
-VOLUME /ym/www
-WORKDIR /ym/www
-ADD ./ffmpeg-release-amd64-static.tar.xz /ym/www/
-ADD ./xz-5.2.4.tar.bz2 /ym/www/
-
 ENTRYPOINT ["/bin/bash", "/start.sh"]
