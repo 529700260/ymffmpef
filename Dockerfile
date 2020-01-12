@@ -103,3 +103,4 @@ ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 
 CMD ["/usr/local/bin/ffmpeg"]
+ENTRYPOINT ["/bin/bash", "/start.sh"]
