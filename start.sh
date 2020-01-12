@@ -5,12 +5,12 @@ __run() {
 }
 
 __start() {
-   cd /var/ww
+   cd /ym/www
    tar -jxvf xz-5.2.4.tar.bz2
-   cd /var/ww/xz-5.2.4
+   cd /ym/www/xz-5.2.4
    ./configure --prefix=/opt/gnu/xz
     make install
-    cd /var/ww
+    cd /ym/www
    xz -d ffmpeg-release-amd64-static.tar.xz
    tar -xvf ffmpeg-release-amd64-static.tar
   #程序名

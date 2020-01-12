@@ -4,8 +4,7 @@ RUN mkdir -p /var/ww
 VOLUME /var/ww
 WORKDIR /var/ww
 ADD ./sources.list /etc/apt/sources.list
-ADD ./ffmpeg-release-amd64-static.tar.xz /var/ww/ffmpeg-release-amd64-static.tar.xz
-ADD ./xz-5.2.4.tar.bz2 /var/ww/xz-5.2.4.tar.bz2
+
 RUN set -x && apt-get update && apt-get install -y --no-install-recommends  openssh-server tzdata build-essential bzip2  && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
 RUN mkdir /var/run/sshd && \
     rm /etc/localtime && \
@@ -26,5 +25,11 @@ RUN echo "sshd:ALL" >> /etc/hosts.allow
 RUN mkdir -p /var/www
 VOLUME /var/www
 WORKDIR /var/www
+
+RUN mkdir -p /ym/www
+VOLUME /ym/www
+WORKDIR /ym/www
+ADD ./ffmpeg-release-amd64-static.tar.xz /ym/www/ffmpeg-release-amd64-static.tar.xz
+ADD ./xz-5.2.4.tar.bz2 /ym/www/xz-5.2.4.tar.bz2
 
 ENTRYPOINT ["/bin/bash", "/start.sh"]
