@@ -100,4 +100,3 @@ COPY --from=build /opt/ffmpeg /opt/ffmpeg
 COPY --from=build /usr/lib/libfdk-aac.so.2 /usr/lib/libfdk-aac.so.2
 
 CMD ["/usr/local/bin/ffmpeg"]
-ENTRYPOINT ["/bin/bash", "/start.sh"]
