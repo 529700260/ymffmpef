@@ -1,10 +1,6 @@
 FROM daocloud.io/library/java:8u40-b09
 MAINTAINER JiYun Tech Team <mboss0@163.com>
-RUN mkdir -p /var/ww
-VOLUME /var/ww
-WORKDIR /var/ww
 ADD ./sources.list /etc/apt/sources.list
-
 RUN set -x && apt-get update && apt-get install -y --no-install-recommends  openssh-server tzdata build-essential bzip2  && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
 RUN mkdir /var/run/sshd && \
     rm /etc/localtime && \
@@ -29,7 +25,7 @@ WORKDIR /var/www
 RUN mkdir -p /ym/www
 VOLUME /ym/www
 WORKDIR /ym/www
-ADD ./ffmpeg-release-amd64-static.tar.xz /ym/www/ffmpeg-release-amd64-static.tar.xz
-ADD ./xz-5.2.4.tar.bz2 /ym/www/xz-5.2.4.tar.bz2
+ADD ./ffmpeg-release-amd64-static.tar.xz /ym/www/
+ADD ./xz-5.2.4.tar.bz2 /ym/www/
 
 ENTRYPOINT ["/bin/bash", "/start.sh"]
